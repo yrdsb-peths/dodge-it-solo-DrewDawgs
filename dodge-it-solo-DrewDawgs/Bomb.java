@@ -20,6 +20,12 @@ public class Bomb extends Actor
         {
             resetBomb();
         }
+        if(isTouching(Hero.class))
+        {
+            SillyFace sillyFace = new SillyFace();
+            getWorld().addObject(sillyFace, 300, 200);
+            getWorld().removeObject(this);
+        }
     }
     public void resetBomb()
     {
